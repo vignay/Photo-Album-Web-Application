@@ -29,8 +29,8 @@ function textSearch() {
             const bucket = photo.bucket;
             const objectKey = photo.objectKey;
         
-            const photoHtml = '<figure style="display:inline-block; margin:10px; height: 100px; width:calc(100%/3 - 20px)">' +
-                                '<img src="' + `https://${bucket}.s3.amazonaws.com/${objectKey}` + '" style="width:100%; max-height:100px">' +
+            const photoHtml = '<figure style="display:inline-block; margin:10px; width:calc(100%/3 - 20px)">' +
+                                '<img src="' + `https://${bucket}.s3.amazonaws.com/${objectKey}` + '" style="width:100%">' +
                                 '<figcaption style="text-align:center">' + objectKey + '</figcaption>' +
                             '</figure>';
             photosDiv.innerHTML += photoHtml;
