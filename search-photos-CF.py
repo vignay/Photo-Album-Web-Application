@@ -33,7 +33,7 @@ def lambda_handler(event, context):
     print("labels", labels)
 
     if len(labels) != 0:
-        img_paths = get_photo_path(labels, 'photo-storage-b2')
+        img_paths = get_photo_path(labels, 'photo-storage-b2-cf')
 
     print("img_paths", img_paths)
     if not img_paths:

@@ -12,7 +12,8 @@ function textSearch() {
   fetch(API_BASE_URL + SEARCH_ENDPOINT + '?q=' + searchQuery)
     .then(response => response.json())
     .then(data => {
-      if (data.imagePaths.length === 0) {
+      console.log(data);
+      if (data === 'No Results found') {
         var photosDiv = document.getElementById("photos_search_results");
         photosDiv.innerHTML = "";
 
