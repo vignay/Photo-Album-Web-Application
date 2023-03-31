@@ -39,10 +39,8 @@ def lambda_handler(event, context):
     if not img_paths:
         return{
             'statusCode':200,
-            'headers': {"Access-Control-Allow-Origin":"*", "Access-Control-Allow-Headers": "*", "Access-Control-Allow-Methods": "*"},
-            'body': json.dumps({
-                'imagePaths': []
-            })
+            "headers": {"Access-Control-Allow-Origin":"*", "Access-Control-Allow-Headers": "*", "Access-Control-Allow-Methods": "*"},
+            'body': json.dumps('No Results found')
         }
     else:    
         return{
