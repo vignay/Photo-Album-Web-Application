@@ -48,11 +48,14 @@ def lambda_handler(event, context):
     # extract the metadata of the S3 object
     s3_object_metadata = s3.head_object(Bucket=bucket_name, Key=object_key)
 
+    print('s3 data', s3_object_metadata)
+    
     # extract the custom labels from the object metadata, if applicable
     custom_labels = []
-    if 'x-amz-meta-customLabels' in s3_object_metadata['Metadata']:
-        custom_labels = s3_object_metadata['Metadata']['x-amz-meta-customLabels'].split(',')
+    if 'x-amz-meta-customlabels' in s3_object_metadata['ResponseMetadata']['HTTPHeaders']:
+        custom_labels = s3_object_metadata['ResponseMetadata']['HTTPHeaders']['x-amz-meta-customlabels'].split(',')
 
+    print(custom_labels)
     # create a list of labels detected by Rekognition and append the custom labels
     labels = []
     for label in response['Labels']:
@@ -76,7 +79,7 @@ def lambda_handler(event, context):
         refresh = True
     )
 
-    print(response)
+    print('response', response)
 
     return {
         'statusCode': 200,

@@ -12,7 +12,7 @@ function textSearch() {
   fetch(API_BASE_URL + SEARCH_ENDPOINT + '?q=' + searchQuery)
     .then(response => response.json())
     .then(data => {
-      if (data.length === 0) {
+      if (data.imagePaths.length === 0) {
         var photosDiv = document.getElementById("photos_search_results");
         photosDiv.innerHTML = "";
 
@@ -24,14 +24,12 @@ function textSearch() {
         var photosDiv = document.getElementById("photos_search_results");
         photosDiv.innerHTML = "";
         
-        for (let i = 0; i < data.length; i++) {
-            const photo = data[i];
-            const bucket = photo.bucket;
-            const objectKey = photo.objectKey;
+        for (let i = 0; i < data.imagePaths.length; i++) {
+            const photo_path = data.imagePaths[i];
         
             const photoHtml = '<figure style="display:inline-block; margin:10px; width:calc(100%/3 - 20px)">' +
-                                '<img src="' + `https://${bucket}.s3.amazonaws.com/${objectKey}` + '" style="width:100%">' +
-                                '<figcaption style="text-align:center">' + objectKey + '</figcaption>' +
+                                '<img src="' + `${photo_path}` + '" style="width:100%">' +
+                                '<figcaption style="text-align:center">' + photo_path.split('/')[3].split('?')[0] + '</figcaption>' +
                             '</figure>';
             photosDiv.innerHTML += photoHtml;
         }

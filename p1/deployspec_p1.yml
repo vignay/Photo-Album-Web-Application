@@ -35,8 +35,8 @@ phases:
       # - command
   build:
     commands:
-      - aws lambda update-function-code --function-name index-photos.py --region us-east-1 --zip-file index-photos.zip
-      - aws lambda update-function-code --function-name search-photos.py --region us-east-1 --zip-file search-photos.zip
+      - aws lambda update-function-code --function-name 'index-photos-CF' --region us-east-1 --zip-file fileb://index-photos.zip
+      - aws lambda update-function-code --function-name 'search-photos-CF' --region us-east-1 --zip-file fileb://search-photos.zip
       # - command
       # - command
   #post_build:
