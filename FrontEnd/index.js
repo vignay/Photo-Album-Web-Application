@@ -1,7 +1,7 @@
 // Variables for accessing the API Gateway endpoints
-const API_BASE_URL = 'https://lg47up03v6.execute-api.us-east-1.amazonaws.com/Photo_Stage1';
+const API_BASE_URL = 'https://3d22xerqzb.execute-api.us-east-1.amazonaws.com/Prod';
 const SEARCH_ENDPOINT = '/search';
-const UPLOAD_ENDPOINT = '/upload/photo-storage-b2/';
+const UPLOAD_ENDPOINT = '/upload/photo-storage-b2-cf/';
 
 // Function to handle text search
 function textSearch() {
