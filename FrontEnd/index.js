@@ -88,7 +88,7 @@ function uploadPhoto() {
   fetch(API_BASE_URL + UPLOAD_ENDPOINT + fileName, {
     method: 'PUT',
     headers: {
-      "x-amz-meta-customLabels": customLabels.value,
+      "x-amz-meta-customLabels": customLabels,
       "Content-Type": `image/${fileType}`,
       "x-api-key": "EJj1AAyQwB6kTf5PN6N079TIoWzxGbeJ9nQutCVY"
     },
