@@ -133,6 +133,20 @@ Resources:
       ClusterConfig:
         InstanceType: t3.small.search
         InstanceCount: 1
+      AdvancedSecurityOptions:
+        Enabled: true
+        InternalUserDatabaseEnabled: true
+        MasterUserOptions:
+          MasterUserName: 'master'
+          MasterUserPassword: 'Columbia@123'
+      DomainEndpointOptions:
+        EnforceHTTPS: true
+      EncryptionAtRestOptions:
+        Enabled: true
+      NodeToNodeEncryptionOptions:
+        Enabled: true
+      AdvancedOptions:
+        rest.action.multi.allow_explicit_index: true
       EBSOptions:
         EBSEnabled: True
         VolumeType: gp2
