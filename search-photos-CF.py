@@ -17,7 +17,7 @@ logger.setLevel(logging.DEBUG)
 headers = { "Content-Type": "application/json" }
 region = 'us-east-1'
 lex = boto3.client('lexv2-runtime')
-HOST = 'search-photo-qgodteylft6yxnrtionvrcm4c4.us-east-1.es.amazonaws.com'
+HOST = 'search-restaurants-obqoqazq3kmdmuj7q2y4zrensy.us-east-1.es.amazonaws.com'
 cred = boto3.Session().get_credentials()
 service = 'es'
 s3 = boto3.client('s3')

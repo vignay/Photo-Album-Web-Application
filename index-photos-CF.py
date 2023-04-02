@@ -10,7 +10,7 @@ from requests_aws4auth import AWS4Auth
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-HOST = 'search-photo-qgodteylft6yxnrtionvrcm4c4.us-east-1.es.amazonaws.com'
+HOST = 'search-restaurants-obqoqazq3kmdmuj7q2y4zrensy.us-east-1.es.amazonaws.com'
 
 region = 'us-east-1'
 service = 'es'
