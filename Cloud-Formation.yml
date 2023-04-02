@@ -89,6 +89,19 @@ Resources:
       Principal: s3.amazonaws.com
       SourceArn:
         Fn::Sub: arn:aws:s3:::${S3BucketName}
+  
+  Lambda2InvokePermission:
+    Type: AWS::Lambda::Permission
+    DependsOn: LambdaFunction2
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+          - LambdaFunction2
+          - Arn
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Sub: "arn:aws:execute-api:us-east-1:${AWS::AccountId}:${MyRestApi}/*"
 
   Bucket1:
     Type: AWS::S3::Bucket
@@ -160,7 +173,7 @@ Resources:
                 - "*"  
             Action:
               - "es:*"
-            Resource: "arn:aws:opensearch:us-east-1:440267342791:domain/photos/*"
+            Resource: "arn:aws:es:us-east-1:440267342791:domain/photos/*"
 
   MyRestApi:
     Type: AWS::ApiGateway::RestApi
