@@ -1,5 +1,5 @@
 // Variables for accessing the API Gateway endpoints
-const API_BASE_URL = 'https://mhq4085rj1.execute-api.us-east-1.amazonaws.com/Prod';
+const API_BASE_URL = 'https://pktf9voz2i.execute-api.us-east-1.amazonaws.com/Prod';
 const SEARCH_ENDPOINT = '/search';
 const UPLOAD_ENDPOINT = '/upload/photo-storage-b2-cf/';
 
