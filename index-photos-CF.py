@@ -80,6 +80,7 @@ def lambda_handler(event, context):
     )
 
     print('response', response)
+    print('hello world!')
 
     return {
         'statusCode': 200,
